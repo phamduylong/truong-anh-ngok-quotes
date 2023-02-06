@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { quotes, fetchQuotes } = require("../assets/quotes");
+const { quotes, fetchQuotes } = require("../public/assets/quotes");
 const FETCH_LIMIT = 10;
 //main route
 router.get("/quotes", async (req, res) => {
@@ -8,7 +8,7 @@ router.get("/quotes", async (req, res) => {
   if (quote) return res.status(200).json(quote);
 });
 
-//fetching report route
+
 router.get("/quotes/:amount", async (req, res) => {
   const requested_amount = Number(req.params.amount);
   if (isNaN(requested_amount)) {
