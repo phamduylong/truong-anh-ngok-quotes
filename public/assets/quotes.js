@@ -9,6 +9,10 @@ const quotes = [
   "Anh biết, nhưng như thế là quá ít",
   "Mọi việc không như em nghĩ đâu",
   `Bạn Chỉnh ơi, Chỉnh đang comment một câu anh không thích một chút nào nhé. Rất nhiều bạn cứ nhai đi nhai lại cái câu là tin chuẩn chưa anh. Muốn biết tin chuẩn chưa anh thì hãy so sánh hãy xem xét các nguồn tin khác, hãy đọc báo. Nếu đọc được một tin mà cảm thấy à mình vẫn còn chưa tin nổi`,
+  "Quá hài hước em ạ",
+  "Ồ, sao em lại nói thế?",
+  "Trình thấp nó thế em ạ",
+  
 ];
 
 function fetchQuotes(amount) {
