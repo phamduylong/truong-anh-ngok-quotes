@@ -1,0 +1,27 @@
+{
+  "devDependencies": {
+    "@types/node": "^18.11.19",
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "name": "truong-anh-ngok-quotes",
+  "description": "An API to generate quotes from Commentator/Journalist Truong Anh Ngoc (The only Vietnamese representatives to vote for the Ballon d'Or)",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon ./src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phamduylong/truong-anh-ngok-quotes.git"
+  },
+  "author": "longph",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phamduylong/truong-anh-ngok-quotes/issues"
+  },
+  "homepage": "https://github.com/phamduylong/truong-anh-ngok-quotes#readme"
+}
