@@ -8,7 +8,7 @@
   "name": "truong-anh-ngok-quotes",
   "description": "An API to generate quotes from Commentator/Journalist Truong Anh Ngoc (The only Vietnamese representatives to vote for the Ballon d'Or)",
   "version": "1.0.0",
-  "main": "src/server.js",
+  "main": "./src/server.js",
   "scripts": {
     "dev": "nodemon ./src/server.js",
     "build": "node ./src/server.js",
