@@ -1,6 +1,5 @@
 {
   "devDependencies": {
-    "@types/node": "^18.11.19",
     "nodemon": "^2.0.20"
   },
   "dependencies": {
@@ -9,9 +8,10 @@
   "name": "truong-anh-ngok-quotes",
   "description": "An API to generate quotes from Commentator/Journalist Truong Anh Ngoc (The only Vietnamese representatives to vote for the Ballon d'Or)",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "src/server.js",
   "scripts": {
-    "dev": "nodemon ./src/server.js",
+    "dev": "nodemon /src/server.js",
+    "build": "node /src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
