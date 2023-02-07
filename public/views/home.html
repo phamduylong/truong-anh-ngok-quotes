@@ -7,7 +7,7 @@
     <title>Anh Ngok's API</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="stylesheet" type="text/css" href="../styles/styles.css" />
-    </style>
+    <script src="scripts/fetch_requests.js" async></script>
   </head>
   <body>
     <div id="main-container">
@@ -20,12 +20,9 @@
             </a
           >
         </div>
-
+        
         <div class="code-section">
-          <pre><code>
-            [ 
-            &nbsp;&nbsp;"Điều đó quan trọng với em lắm sao?"
-            ]
+          <pre><code id="single-fetch-output">
           </code></pre>
 
         </div>
@@ -38,12 +35,7 @@
         >
         &nbsp;(Limit 10)
         <div class="code-section">
-          <pre><code>
-            [ 
-              &nbsp;&nbsp;"Điều đó quan trọng với em lắm sao?",
-              &nbsp;&nbsp;"Ồ, sao em lại nói thế",
-              &nbsp;&nbsp;"Mọi chuyện không như em nghĩ đâu",
-            ]
+          <pre><code id="multiple-fetch-output" class="language-javascript">
           </code></pre>
         </div>
 
@@ -54,8 +46,18 @@
         >
         &nbsp;(Limit exceeded)
         <div class="code-section">
-          <pre><code>
-            {error: "Fetch amount has to be larger than 0 and less than or equal to 10!"}
+          <pre><code id="bad-fetch-output-limit">
+          </code></pre>
+        </div>
+
+        <span class="method">GET</span>&nbsp;&nbsp;
+        <a class="api-link" href="https://blv-anh-ngok-said.onrender.com/api/quotes/invalidparam" target="_blank">
+          https://blv-anh-ngok-said.onrender.com/api/quotes/invalidparam
+          </a
+        >
+        &nbsp;(Invalid request parameter)
+        <div class="code-section">
+          <pre><code id="bad-fetch-output-param">
           </code></pre>
         </div>
       </div>
@@ -70,5 +72,7 @@
     <div id="banner">
       BLV ANH NGOK'S API 🐰
     </div>
+
+    
   </body>
 </html>
