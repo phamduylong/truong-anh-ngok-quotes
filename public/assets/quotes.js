@@ -12,7 +12,18 @@ const quotes = [
   "Quá hài hước em ạ",
   "Ồ, sao em lại nói thế?",
   "Trình thấp nó thế em ạ",
-  
+  "4 tiếng trước thì như thế, nhưng bây giờ khác rồi",
+  "MNSD, thảo nào...",
+  "Có ai bay 10 nghìn km sang đây chỉ để post 1 cái ảnh photoshop không? Bạn có vấn đề gì về tư duy không?",
+  "Anh không bao giờ nói vậy em nhé",
+  "Thời gian sẽ trả lời thôi em",
+  "Chưa chính thức, nhưng anh đón đầu sự kiện.",
+  "Em mail hoặc gọi hotline UEFA nhé. Họ sẽ giúp em.",
+  "Sex, luôn là sex",
+  "Chuyền đi đừng sút...Hong, Zaniolo không nghe tôi, Zaniolo sút và anh ta ghi bàn",
+  "Nói có chủ ngữ đi bạn nhỉ. Nên nhớ, đây là nhà mình. Bạn đang nói chuyện với ai thế, qua comment này?",
+  "Kịch bản ấy đẹp, nhưng khó xảy ra",
+  "Nicolo Zaniolo ơi, tên cháu là gì? Tên cháu là Nam, Đức hay là Tuấn?"
 ];
 
 function fetchQuotes(amount) {
