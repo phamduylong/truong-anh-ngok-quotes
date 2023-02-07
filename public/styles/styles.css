@@ -1,0 +1,161 @@
+img {
+  height: 4vh;
+  width: 4vh;
+  margin: 2px;
+}
+
+#main-container {
+  position: absolute;
+  top: 60%;
+  padding: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-height: 60%;
+  border: 2px solid;
+  overflow: scroll;
+}
+
+#contact-bar {
+  position: absolute;
+  top: 2%;
+  right: 1%;
+  width: 25%;
+  border: 2px solid;
+  border-radius: 999px;
+  height: 5%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 2px;
+}
+
+.code-section {
+  font-family: Consolas, "courier new";
+  color: black;
+  background-color: #f1f1f1;
+  font-size: 110%;
+  border-radius: 9999px;
+}
+
+img {
+  height: 3vh;
+  width: 3vh;
+  margin: 2px;
+}
+
+#banner {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4vw;
+}
+
+body {
+  font-family: cursive;
+  padding: 0;
+  margin: 0;
+}
+
+.api-link:visited {
+  color: #000;
+}
+
+.api-link:hover {
+  background: #111;
+  color: whitesmoke;
+}
+
+code {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+pre {
+    margin: 5%;
+    text-align: left;
+}
+
+@media screen and (min-width: 960px) {
+  #main-container {
+    position: absolute;
+    top: 60%;
+    padding: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 40%;
+    border: 2px solid;
+    overflow: scroll;
+  }
+
+  #contact-bar {
+    position: absolute;
+    top: 2%;
+    right: 1%;
+    width: 10%;
+    border: 2px solid;
+    border-radius: 999px;
+    height: 5%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2px;
+  }
+
+  .code-section {
+    font-family: Consolas, "courier new";
+    color: black;
+    background-color: #f1f1f1;
+    font-size: 110%;
+    border-radius: 9999px;
+    margin: 2%;
+    padding: 1%;
+  }
+
+  code {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  img {
+    height: 4vh;
+    width: 4vh;
+    margin: 2px;
+  }
+
+  #banner {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4vw;
+  }
+
+  body {
+    font-family: cursive;
+    margin: 2%;
+  }
+
+  .api-link:visited {
+    color: #000;
+  }
+
+  .api-link:hover {
+    background: #111;
+    color: whitesmoke;
+  }
+
+  code {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  
+  pre {
+      margin: 5%;
+  }
+}
