@@ -12,12 +12,12 @@ router.get("/quotes", async (req, res) => {
 router.get("/quotes/:amount", async (req, res) => {
   const requested_amount = Number(req.params.amount);
   if (isNaN(requested_amount)) {
-    return res.status(400).send("Fetch limit has to a number!");
+    return res.status(400).json({error: "Fetch limit has to a number!"});
   } else {
-    if (requested_amount <= FETCH_LIMIT) {
+    if (requested_amount <= FETCH_LIMIT && requested_amount > 0) {
       const quotes = fetchQuotes(requested_amount);
       return res.status(200).json(quotes);
-    } else return res.status(400).send("Fetch limit is 10 quotes per request!");
+    } else return res.status(400).json({error: "Fetch amount has to be larger than 0 and less than or equal to 10!"});
   }
 });
 
