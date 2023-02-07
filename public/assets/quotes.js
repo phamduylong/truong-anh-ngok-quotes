@@ -8,7 +8,7 @@ const quotes = [
   "Càng đi nhiều, người ta càng không so sánh em ạ, vì không nơi nào giống nơi nào. Đây là điều anh đã học được sau các chuyến đi.",
   "Anh biết, nhưng như thế là quá ít",
   "Mọi việc không như em nghĩ đâu",
-  `Bạn Chỉnh ơi, Chỉnh đang comment một câu anh không thích một chút nào nhé. Rất nhiều bạn cứ nhai đi nhai lại cái câu là tin chuẩn chưa anh. Muốn biết tin chuẩn chưa anh thì hãy so sánh hãy xem xét các nguồn tin khác, hãy đọc báo. Nếu đọc được một tin mà cảm thấy à mình vẫn còn chưa tin nổi`,
+  `Bạn Chỉnh ơi, Chỉnh đang comment một câu anh không thích một chút nào nhé.`,
   "Quá hài hước em ạ",
   "Ồ, sao em lại nói thế?",
   "Trình thấp nó thế em ạ",
@@ -23,7 +23,9 @@ const quotes = [
   "Chuyền đi đừng sút...Hong, Zaniolo không nghe tôi, Zaniolo sút và anh ta ghi bàn",
   "Nói có chủ ngữ đi bạn nhỉ. Nên nhớ, đây là nhà mình. Bạn đang nói chuyện với ai thế, qua comment này?",
   "Kịch bản ấy đẹp, nhưng khó xảy ra",
-  "Nicolo Zaniolo ơi, tên cháu là gì? Tên cháu là Nam, Đức hay là Tuấn?"
+  "Nicolo Zaniolo ơi, cháu tên là gì? Tên cháu là Nam, Đức hay là Tuấn?",
+  "Bạn viết tâm thư lên Liên hợp quốc nhé. Chắc là họ lắng nghe bạn đấy.",
+  "Chém gió tí cho vui mà em"
 ];
 
 function fetchQuotes(amount) {
