@@ -58,7 +58,7 @@ body {
   margin: 0;
 }
 
-.api-link:visited {
+.api-link, .api-link:visited {
   color: #000;
 }
 
@@ -140,7 +140,7 @@ pre {
     margin: 2%;
   }
 
-  .api-link:visited {
+  .api-link, .api-link:visited {
     color: #000;
   }
 
