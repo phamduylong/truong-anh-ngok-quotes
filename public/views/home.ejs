@@ -1,20 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anh Ngok's API</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-
-    <style>
-        #bg {
-            height: 100%;
-            width: 100%;
-        }
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../styles/styles.css" />
     </style>
-</head>
-<body>
-    <img id="bg" src="anhngok.png" alt="">
-</body>
+  </head>
+  <body>
+    <div id="main-container">
+
+      <div class="block-container">
+        <div class="block-endpoint">
+          <span class="method">GET</span>&nbsp;&nbsp;
+          <a class="api-link" href="https://blv-anh-ngok-said.onrender.com/api/quotes" target="_blank">
+            https://blv-anh-ngok-said.onrender.com/api/quotes
+            </a
+          >
+        </div>
+
+        <div class="code-section">
+          <pre><code>
+            [ 
+            &nbsp;&nbsp;"Điều đó quan trọng với em lắm sao?"
+            ]
+          </code></pre>
+
+        </div>
+
+
+        <span class="method">GET</span>&nbsp;&nbsp;
+        <a class="api-link" href="https://blv-anh-ngok-said.onrender.com/api/quotes/3" target="_blank">
+          https://blv-anh-ngok-said.onrender.com/api/quotes/3
+          </a
+        >
+        &nbsp;(Limit 10)
+        <div class="code-section">
+          <pre><code>
+            [ 
+              &nbsp;&nbsp;"Điều đó quan trọng với em lắm sao?",
+              &nbsp;&nbsp;"Ồ, sao em lại nói thế",
+              &nbsp;&nbsp;"Mọi chuyện không như em nghĩ đâu",
+            ]
+          </code></pre>
+        </div>
+
+        <span class="method">GET</span>&nbsp;&nbsp;
+        <a class="api-link" href="https://blv-anh-ngok-said.onrender.com/api/quotes/15" target="_blank">
+          https://blv-anh-ngok-said.onrender.com/api/quotes/15
+          </a
+        >
+        &nbsp;(Limit exceeded)
+        <div class="code-section">
+          <pre><code>
+            {error: "Fetch amount has to be larger than 0 and less than or equal to 10!"}
+          </code></pre>
+        </div>
+      </div>
+    </div>
+
+    <div id="contact-bar">
+      <a href="mailto:longphamduy2002@gmail.com" target="_blank"><img src="assets/email.svg" alt="Email"></a>
+      <a href="https://github.com/phamduylong/truong-anh-ngok-quotes" target="_blank"><img src="assets/github.svg" alt="GitHub"></a>
+      <a href="https://github.com/phamduylong/truong-anh-ngok-quotes/#readme" target="_blank"><img src="assets/docs.svg" alt="Documentations"></a>
+    </div>
+
+    <div id="banner">
+      BLV ANH NGOK'S API 🐰
+    </div>
+  </body>
 </html>
