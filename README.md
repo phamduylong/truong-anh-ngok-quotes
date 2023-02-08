@@ -4,7 +4,7 @@
 
 An API to generate quotes from Truong Anh Ngoc (Vietnamese Representative at France Football to participate in voting for the famous Ballon d'Or annually).
 
-[Frontpage](https://blv-anh-ngok-said.onrender.com/)
+[Project Frontpage](https://blv-anh-ngok-said.onrender.com/)
 
 ## Setup
 
@@ -30,7 +30,7 @@ npm run dev
 Get a random quote as below:
 > [https://blv-anh-ngok-said.onrender.com/api/quotes](https://blv-anh-ngok-said.onrender.com/api/quotes)
 
-```bash
+```json
 [
     "Mọi chuyện không như em nghĩ đâu"
 ]
@@ -38,10 +38,10 @@ Get a random quote as below:
 
 #### `GET /api/quotes/{amount}`
 
-Get a number of random quotes (max. 10):
+Generate a number of random quotes (max. 10):
 > [https://blv-anh-ngok-said.onrender.com/api/quotes/5](https://blv-anh-ngok-said.onrender.com/api/quotes/5)
 
-```bash
+```json
 [
     "Trình thấp nó thế em ạ",
     "Chuẩn, hoàn toàn chuẩn! Nhưng mình .. nhưng bạn đã bị block vì bạn không tôn trọng mình!",
@@ -50,6 +50,98 @@ Get a number of random quotes (max. 10):
     "Ồ, sao em lại nói thế?"
 ]
 ```
+
+Error response format:
+> [https://blv-anh-ngok-said.onrender.com/api/quotes/15](https://blv-anh-ngok-said.onrender.com/api/quotes/15)
+
+```json
+{
+    error: "Fetch amount has to be larger than 0 and less than or equal to 10!"
+}
+```
+
+> [https://blv-anh-ngok-said.onrender.com/api/quotes/sometext](https://blv-anh-ngok-said.onrender.com/api/quotes/somtext)
+
+```json
+{
+    error: "Fetch limit has to a number!"
+}
+```
+
+## Examples
+
+### NodeJs
+
+```javascript
+// using node fetch api
+
+let amount = 3;
+
+fetch(`https://blv-anh-ngok-said.onrender.com/api/quotes/${amount}`)
+.then(raw => raw.json())
+.then(quote_arr => {
+    quote_arr.forEach(quote => {
+        console.log(quote);
+    })
+})
+
+.catch(err => {
+    console.error(err);
+});
+```
+
+### Python
+
+```python
+# using python and requests module
+
+import requests
+import json
+
+amount = 3
+response = requests.get('https://blv-anh-ngok-said.onrender.com/api/quotes/' + str(amount))
+raw_data = response.text
+parsed_json = json.loads(raw_data)
+
+print(parsed_json)
+```
+
+### Go
+
+```go
+// using go new request
+
+package main
+
+import (
+	"fmt"
+	"net/http"
+	"io/ioutil"
+)
+
+func main() {
+
+	url := "https://blv-anh-ngok-said.onrender.com/api/quotes/3"
+
+	req, _ := http.NewRequest("GET", url, nil)
+
+	res, _ := http.DefaultClient.Do(req)
+
+	defer res.Body.Close()
+	body, _ := ioutil.ReadAll(res.Body)
+
+	fmt.Println(string(body))
+
+}
+```
+
+### Bash
+
+```bash
+curl --request GET \
+        --url 'https://blv-anh-ngok-said.onrender.com/api/quotes/3'
+```
+
 
 ## Contributing
 
