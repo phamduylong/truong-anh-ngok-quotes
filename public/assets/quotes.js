@@ -38,4 +38,4 @@ function fetchAllQuotes() {
   return quotes;
 }
 
-module.exports = { fetchQuotes, fetchAllQuotes };
+module.exports = { quotes, fetchQuotes, fetchAllQuotes };
