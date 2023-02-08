@@ -4,7 +4,8 @@ async function fetchQuotes(amount, elem) {
     fetch(`/api/quotes/${amount}`).
     then(res => res.json()).
     then(arr => {
-        arr.forEach(quote => {
+        if(arr.status === 200)
+        arr.data.forEach(quote => {
             fetched_data += `&nbsp;&nbsp;\"${quote}\",<br>`;
         });
         code_output.innerHTML = `[<br>${fetched_data}]`;

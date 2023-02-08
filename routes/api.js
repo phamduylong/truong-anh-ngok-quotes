@@ -5,7 +5,13 @@ const FETCH_LIMIT = 10;
 //main route
 router.get("/quotes", async (req, res) => {
   const quote = fetchQuotes(1);
-  if (quote) return res.status(200).json(quote);
+  
+  if (quote) {
+    const return_obj = {status: 200, data: quote}
+    return res.status(200).json(return_obj);
+  } else {
+    return res.status(500).json({error: "Server Internal Error. Please try again!"});
+  }
 });
 
 
@@ -16,7 +22,8 @@ router.get("/quotes/:amount", async (req, res) => {
   } else {
     if (requested_amount <= FETCH_LIMIT && requested_amount > 0) {
       const quotes = fetchQuotes(requested_amount);
-      return res.status(200).json(quotes);
+      const return_obj = {status: 200, data: quotes}
+      return res.status(200).json(return_obj);
     } else return res.status(400).json({error: "Fetch amount has to be larger than 0 and less than or equal to 10!"});
   }
 });
