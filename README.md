@@ -34,7 +34,9 @@ Get a random quote as below:
 {
     status: 200,
     data: [
-        "Mọi chuyện không như em nghĩ đâu"
+        "Mọi chuyện không như em nghĩ đâu",
+        ...
+        "Chém gió tí cho vui mà em"
     ]
 }
 ```
@@ -42,6 +44,17 @@ Get a random quote as below:
 #### `GET /api/quotes/{amount}`
 
 Generate a number of random quotes (max. 10):
+> [https://blv-anh-ngok-said.onrender.com/api/quotes/1](https://blv-anh-ngok-said.onrender.com/api/quotes/1)
+
+```json
+{
+    status: 200,
+    data: [
+        "Anh biết, nhưng như thế là quá ít"
+    ]
+}
+```
+
 > [https://blv-anh-ngok-said.onrender.com/api/quotes/5](https://blv-anh-ngok-said.onrender.com/api/quotes/5)
 
 ```json
