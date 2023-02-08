@@ -6,9 +6,9 @@ async function fetchQuotes(amount, elem) {
     then(arr => {
         if(arr.status === 200)
         arr.data.forEach(quote => {
-            fetched_data += `&nbsp;&nbsp;\"${quote}\",<br>`;
+            fetched_data += `&nbsp;&nbsp;&nbsp;&nbsp;\"${quote}\",<br>`;
         });
-        code_output.innerHTML = `[<br>${fetched_data}]`;
+        code_output.innerHTML = `{<br>&nbsp;&nbsp;status: 200,<br>&nbsp;&nbsp;data: [<br>${fetched_data}&nbsp;&nbsp;]<br>}`;
     });
 }
 
@@ -17,7 +17,7 @@ async function badFetch(param, elem) {
     fetch(`/api/quotes/${param}`).
     then(res => res.json()).
     then(err_res => {
-        code_output.innerHTML = `{<br>&nbsp;&nbsp;error: "${err_res.error}"<br>}`;
+        code_output.innerHTML = `{<br>&nbsp;&nbsp;status: 400,<br>&nbsp;&nbsp;error: "${err_res.error}"<br>}`;
     });
 }
 
