@@ -31,9 +31,12 @@ Get a random quote as below:
 > [https://blv-anh-ngok-said.onrender.com/api/quotes](https://blv-anh-ngok-said.onrender.com/api/quotes)
 
 ```json
-[
-    "Mọi chuyện không như em nghĩ đâu"
-]
+{
+    status: 200,
+    data: [
+        "Mọi chuyện không như em nghĩ đâu"
+    ]
+}
 ```
 
 #### `GET /api/quotes/{amount}`
@@ -42,13 +45,16 @@ Generate a number of random quotes (max. 10):
 > [https://blv-anh-ngok-said.onrender.com/api/quotes/5](https://blv-anh-ngok-said.onrender.com/api/quotes/5)
 
 ```json
-[
-    "Trình thấp nó thế em ạ",
-    "Chuẩn, hoàn toàn chuẩn! Nhưng mình .. nhưng bạn đã bị block vì bạn không tôn trọng mình!",
-    "Anh biết, nhưng như thế là quá ít",
-    "Điều đó quan trọng với em lắm sao?",
-    "Ồ, sao em lại nói thế?"
-]
+{
+    status: 200,
+    data: [
+        "Trình thấp nó thế em ạ",
+        "Chuẩn, hoàn toàn chuẩn! Nhưng mình .. nhưng bạn đã bị block vì bạn không tôn trọng mình!",
+        "Anh biết, nhưng như thế là quá ít",
+        "Điều đó quan trọng với em lắm sao?",
+        "Ồ, sao em lại nói thế?"
+    ]
+}
 ```
 
 Error response format:
@@ -56,6 +62,7 @@ Error response format:
 
 ```json
 {
+    status: 400,
     error: "Fetch amount has to be larger than 0 and less than or equal to 10!"
 }
 ```
@@ -64,6 +71,7 @@ Error response format:
 
 ```json
 {
+    status: 400,
     error: "Fetch limit has to a number!"
 }
 ```
@@ -76,15 +84,14 @@ Error response format:
 // using node fetch api
 
 let amount = 3;
-
 fetch(`https://blv-anh-ngok-said.onrender.com/api/quotes/${amount}`)
-.then(raw => raw.json())
-.then(quote_arr => {
-    quote_arr.forEach(quote => {
+.then(res => res.json())
+.then(res_obj => {
+  if(res_obj.status === 200)
+      res_obj.data.forEach(quote => {
         console.log(quote);
     })
 })
-
 .catch(err => {
     console.error(err);
 });
@@ -103,7 +110,8 @@ response = requests.get('https://blv-anh-ngok-said.onrender.com/api/quotes/' + s
 raw_data = response.text
 parsed_json = json.loads(raw_data)
 
-print(parsed_json)
+if parsed_json['status'] == 200:
+  print(parsed_json['data'])
 ```
 
 ### Go
