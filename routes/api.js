@@ -1,13 +1,13 @@
 const express = require("express");
 const router = express.Router();
-const { quotes, fetchQuotes } = require("../public/assets/quotes");
+const { fetchQuotes, fetchAllQuotes } = require("../public/assets/quotes");
 const FETCH_LIMIT = 10;
 //main route
 router.get("/quotes", async (req, res) => {
-  const quote = fetchQuotes(1);
+  const all_quotes = fetchAllQuotes();
   
-  if (quote) {
-    const return_obj = {status: 200, data: quote}
+  if (all_quotes) {
+    const return_obj = {status: 200, data: all_quotes}
     return res.status(200).json(return_obj);
   } else {
     return res.status(500).json({status: 500, error: "Server Internal Error. Please try again!"});
