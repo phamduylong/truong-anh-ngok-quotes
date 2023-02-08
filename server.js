@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const helmet = require("helmet");
 const compression = require('compression');
+const cors = require('cors');
 const rateLimit = require('express-rate-limit');
 const api = require('./routes/api');
 const app = express();
@@ -17,6 +18,7 @@ const apiLimiter = rateLimit({
 app.use('/api/', apiLimiter);
 app.use(helmet());
 app.use(compression());
+app.use(cors());
 app.set('view engine', 'ejs');
 app.set("views", (path.join(__dirname, "public", "views")));
 app.use(express.static(path.join(__dirname, "public")));
