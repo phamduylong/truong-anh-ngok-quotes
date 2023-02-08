@@ -125,9 +125,16 @@ import (
 	"fmt"
 	"net/http"
 	"io/ioutil"
+    "encoding/json"
+    "strings"
 )
 
 func main() {
+
+  type Response struct {
+		Status int      `json:"status"`
+		Data   []string `json:"data"`
+	}
 
 	url := "https://blv-anh-ngok-said.onrender.com/api/quotes/3"
 
@@ -137,9 +144,48 @@ func main() {
 
 	defer res.Body.Close()
 	body, _ := ioutil.ReadAll(res.Body)
+  
+	content := Response{}
+	json.Unmarshal([]byte(body), &content)
 
-	fmt.Println(string(body))
+  if content.Status == 200 {
+	 fmt.Printf(strings.Join(content.Data, "\n"))
+  }
+}
+```
 
+### PHP
+
+```php
+<?php
+
+$curl = curl_init();
+
+curl_setopt_array($curl, [
+	CURLOPT_URL => "https://blv-anh-ngok-said.onrender.com/api/quotes/3",
+	CURLOPT_RETURNTRANSFER => true,
+	CURLOPT_FOLLOWLOCATION => true,
+	CURLOPT_ENCODING => "",
+	CURLOPT_MAXREDIRS => 10,
+	CURLOPT_TIMEOUT => 30,
+	CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+	CURLOPT_CUSTOMREQUEST => "GET",
+]);
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+	echo "cURL Error #:" . $err;
+} else {
+  $json_data = json_decode($response);
+	if ($json_data->{'status'} == 200) {
+    foreach($json_data->{'data'} as $quote) {
+      echo nl2br ("$quote\n");
+    }
+  }
 }
 ```
 
