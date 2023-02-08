@@ -28,10 +28,14 @@ const quotes = [
   "Chém gió tí cho vui mà em"
 ];
 
-function fetchQuotes(amount) {
+function fetchQuotes(amount = 1) {
   const shuffled = quotes.sort(() => 0.5 - Math.random());
   let selected = shuffled.slice(0, amount);
   return selected;
 }
 
-module.exports = {quotes, fetchQuotes};
+function fetchAllQuotes() {
+  return quotes;
+}
+
+module.exports = { fetchQuotes, fetchAllQuotes };
