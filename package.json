@@ -1,6 +1,9 @@
 {
   "devDependencies": {
+    "chai": "^4.3.7",
+    "chai-http": "^4.3.0",
     "ejs": "^3.1.8",
+    "mocha": "^10.2.0",
     "nodemon": "^2.0.20"
   },
   "dependencies": {
@@ -20,7 +23,7 @@
   "scripts": {
     "dev": "nodemon ./server.js",
     "build": "node ./server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
