@@ -27,6 +27,7 @@ app.use('/api', api);
 app.use(express.json());
 
 app.get('/', async (req, res) => {
+	res.setHeader("Content-Type", "text/html");
     res.render('home');
 });
 
