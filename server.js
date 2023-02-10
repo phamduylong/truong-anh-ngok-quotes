@@ -26,6 +26,16 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use('/api', api);
 app.use(express.json());
 
+app.all('*', function (req, res, next) {
+	res.set({
+		"Connection": "Keep-Alive",
+		"Keep-Alive": "timeout=5, max=1000",
+		"Content-Type": "application/json; charset=utf-8",
+		"Access-Control-Allow-Origin": "*",
+   });
+    next();
+});
+
 app.get('/', async (req, res) => {
 	res.setHeader("Content-Type", "text/html");
     res.render('home');
