@@ -36,7 +36,7 @@ app.use('/api', api);
 app.use(express.json());
 
 app.get('/', async (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'views', 'home.html'));
+    res.render('home');
 });
 
 const PORT = process.env.PORT || 5173;
