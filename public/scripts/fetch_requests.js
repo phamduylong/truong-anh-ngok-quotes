@@ -53,7 +53,7 @@ async function badFetchWithoutQuery(param, elem) {
 
 fetchQuotes(2, "all-fetch-output");
 fetchQuotes(3, "multiple-fetch-output");
-fetchWithQuery("anh", "search-output");
+fetchWithQuery("em", "search-output");
 badFetchWithoutQuery("", "bad-search-output")
 badFetch(15, "bad-fetch-output-limit");
 badFetch("invalidparam", "bad-fetch-output-param");
