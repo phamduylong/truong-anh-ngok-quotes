@@ -22,11 +22,39 @@ async function badFetch(param, elem) {
   fetch(`/api/quotes/${param}`)
     .then((res) => res.json())
     .then((err_res) => {
-      code_output.innerHTML = `{<br>&nbsp;&nbsp;status: 400,<br>&nbsp;&nbsp;error: "${err_res.error}"<br>}`;
+      code_output.innerHTML = `{<br>&nbsp;&nbsp;status: ${err_res.status},<br>&nbsp;&nbsp;error: "${err_res.error}"<br>}`;
     });
 }
 
+async function fetchWithQuery(query, elem) {
+  let fetched_data = "";
+  const code_output = document.getElementById(elem);
+  fetch(`/api/quotes/search/${query}`)
+  .then((res) => res.json())
+  .then((arr) => {
+    if (arr.status === 200) {
+      arr.data.forEach((quote) => {
+        fetched_data += `&nbsp;&nbsp;&nbsp;&nbsp;\"${quote}\",<br>`;
+      });
+      code_output.innerHTML = `{<br>&nbsp;&nbsp;status: 200,<br>&nbsp;&nbsp;data: [<br>${fetched_data}&nbsp;&nbsp;]<br>}`;
+    }
+  });
+}
+
+async function badFetchWithoutQuery(param, elem) {
+  const code_output = document.getElementById(elem);
+  fetch(`/api/quotes/search/${param}`)
+    .then((res) => res.json())
+    .then((err_res) => {
+      code_output.innerHTML = `{<br>&nbsp;&nbsp;status: ${err_res.status},<br>&nbsp;&nbsp;error: "${err_res.error}"<br>}`;
+    });
+}
+
+
 fetchQuotes(2, "all-fetch-output");
 fetchQuotes(3, "multiple-fetch-output");
+fetchWithQuery("anh", "search-output");
+badFetchWithoutQuery("", "bad-search-output")
 badFetch(15, "bad-fetch-output-limit");
 badFetch("invalidparam", "bad-fetch-output-param");
+
