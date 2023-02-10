@@ -15,7 +15,7 @@ router.get("/quotes", async (req, res) => {
 });
 
 
-router.get("/quotes/:amount", async (req, res) => {
+router.get("/quotes/:amount([0-9]+)", async (req, res) => {
   const requested_amount = Number(req.params.amount);
   if (isNaN(requested_amount)) {
     return res.status(400).json({status: 400, error: "Fetch amount has to be a number!"});
