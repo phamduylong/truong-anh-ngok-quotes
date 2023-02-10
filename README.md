@@ -18,6 +18,11 @@ git clone https://github.com/phamduylong/truong-anh-ngok-quotes.git
 npm install
 ```
 
+### Redirect to Project's directory
+```bash
+cd truong-anh-ngok-quotes
+```
+
 ### Rollup
 ```bash
 npm run dev
@@ -80,12 +85,26 @@ Error response format:
 }
 ```
 
-> [https://blv-anh-ngok-said.onrender.com/api/quotes/sometext](https://blv-anh-ngok-said.onrender.com/api/quotes/somtext)
+#### `GET /api/quotes/search/{query}`
+
+Get all quotes matching a search query:
+> [https://blv-anh-ngok-said.onrender.com/api/quotes/search/em](https://blv-anh-ngok-said.onrender.com/api/quotes/search/em)
 
 ```json
 {
-    status: 400,
-    error: "Fetch limit has to a number!"
+    status: 200,
+    data: [
+        "Em mail hoặc gọi hotline UEFA nhé. Họ sẽ giúp em.",
+        "Anh không bao giờ nói vậy em nhé","Ồ, sao em lại nói thế?",
+        "Mọi việc không như em nghĩ đâu","Điều đó quan trọng với em lắm sao?",
+        "Trình thấp nó thế em ạ",
+        "Chém gió tí cho vui mà em",
+        "Anh sống như thế đấy em",
+        "Thời gian sẽ trả lời thôi em",
+        "Quá hài hước em ạ",
+        "Càng đi nhiều, người ta càng không so sánh em ạ, vì không nơi nào giống nơi nào. 
+        Đây là điều anh đã học được sau các chuyến đi."
+    ]
 }
 ```
 
