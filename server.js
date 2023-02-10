@@ -22,15 +22,6 @@ app.use(cors());
 app.set('view engine', 'ejs');
 app.set("views", (path.join(__dirname, "public", "views")));
 app.use(express.static(path.join(__dirname, "public")));
-app.all('*', function (req, res, next) {
-	res.set({
-		"Connection": "Keep-Alive",
-		"Keep-Alive": "timeout=5, max=1000",
-		"Content-Type": "application/json; charset=utf-8",
-		"Access-Control-Allow-Origin": "*",
-   });
-    next();
-});
 
 app.use('/api', api);
 app.use(express.json());
