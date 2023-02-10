@@ -31,7 +31,7 @@ router.get("/quotes/:amount", async (req, res) => {
 router.get("/quotes/search/:query?", async (req, res) => {
   const query = req.params.query;
   if(query) {
-    return res.status(200).json(searchQuotes(query));
+    return res.status(200).json({status: 200, data: searchQuotes(query)});
   }
   return res.status(400).json({status: 400, error: "Invalid search query!"});
 })
