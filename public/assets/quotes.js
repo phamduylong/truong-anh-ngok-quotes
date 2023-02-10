@@ -38,4 +38,8 @@ function fetchAllQuotes() {
   return quotes;
 }
 
-module.exports = { quotes, fetchQuotes, fetchAllQuotes };
+function searchQuotes(query = "") {
+  return quotes.filter(item => item.toLowerCase().includes(query.toLowerCase()));
+}
+
+module.exports = { quotes, fetchQuotes, fetchAllQuotes, searchQuotes };
