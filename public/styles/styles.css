@@ -58,7 +58,8 @@ body {
   margin: 0;
 }
 
-.api-link, .api-link:visited {
+.api-link,
+.api-link:visited {
   color: #000;
 }
 
@@ -74,8 +75,8 @@ code {
 }
 
 pre {
-    margin: 5%;
-    text-align: left;
+  margin: 5%;
+  text-align: left;
 }
 
 @media screen and (min-width: 960px) {
@@ -140,7 +141,8 @@ pre {
     margin: 2%;
   }
 
-  .api-link, .api-link:visited {
+  .api-link,
+  .api-link:visited {
     color: #000;
   }
 
@@ -154,8 +156,13 @@ pre {
     white-space: pre-wrap;
     word-break: break-word;
   }
-  
+
   pre {
-      margin: 5%;
+    margin: 5%;
+  }
+
+  mark {
+    background: orange;
+    font-weight: 700;
   }
 }
