@@ -34,10 +34,8 @@ async function fetchWithQuery(query, elem) {
   .then((arr) => {
     if (arr.status === 200) {
       arr.data.forEach((quote) => {
-        quote = quote.replace(new RegExp(query, "ig"), `<mark>` + query +`</mark>`)
-        fetched_data += `&nbsp;&nbsp;&nbsp;&nbsp;\"${quote}\",<br>`;
+        fetched_data += `&nbsp;&nbsp;&nbsp;&nbsp;\"${quote.replace(new RegExp(query, "ig"), `<mark>` + query +`</mark>`)}\",<br>`;
       });
-      console.log(fetched_data)
       code_output.innerHTML = `{<br>&nbsp;&nbsp;status: 200,<br>&nbsp;&nbsp;data: [<br>${fetched_data}&nbsp;&nbsp;]<br>}`;
     }
   });
@@ -56,7 +54,7 @@ async function badFetchWithoutQuery(param, elem) {
 fetchQuotes(2, "all-fetch-output");
 fetchQuotes(3, "multiple-fetch-output");
 fetchWithQuery("em", "search-output");
-badFetchWithoutQuery("", "bad-search-output")
+badFetchWithoutQuery("", "bad-search-output");
 badFetch(15, "bad-fetch-output-limit");
 badFetch("invalidparam", "bad-fetch-output-param");
 
