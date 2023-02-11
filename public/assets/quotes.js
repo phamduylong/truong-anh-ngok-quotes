@@ -25,13 +25,19 @@ const quotes = [
   "Kịch bản ấy đẹp, nhưng khó xảy ra",
   "Nicolo Zaniolo ơi, cháu tên là gì? Tên cháu là Nam, Đức hay là Tuấn?",
   "Bạn viết tâm thư lên Liên hợp quốc nhé. Chắc là họ lắng nghe bạn đấy.",
-  "Chém gió tí cho vui mà em"
+  "Chém gió tí cho vui mà em",
 ];
 
 function fetchQuotes(amount = 1) {
-  const shuffled = quotes.sort(() => 0.5 - Math.random());
-  let selected = shuffled.slice(0, amount);
-  return selected;
+  if (amount > quotes.length)
+    throw new Error(
+      `Insufficient amount of quotes. Maximum is ${quotes.length}.`
+    );
+  else {
+    const shuffled = quotes.sort(() => 0.5 - Math.random());
+    let selected = shuffled.slice(0, amount);
+    return selected;
+  }
 }
 
 function fetchAllQuotes() {
@@ -39,7 +45,9 @@ function fetchAllQuotes() {
 }
 
 function searchQuotes(query = "") {
-  return quotes.filter(item => item.toLowerCase().includes(query.toLowerCase()));
+  return quotes.filter((item) =>
+    item.toLowerCase().includes(query.toLowerCase())
+  );
 }
 
 module.exports = { quotes, fetchQuotes, fetchAllQuotes, searchQuotes };
