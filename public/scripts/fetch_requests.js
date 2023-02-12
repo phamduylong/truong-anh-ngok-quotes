@@ -34,7 +34,7 @@ async function fetchWithQuery(query, elem) {
   .then((arr) => {
     if (arr.status === 200) {
       arr.data.forEach((quote) => {
-        fetched_data += `&nbsp;&nbsp;&nbsp;&nbsp;\"${quote.replace(new RegExp(query, "ig"), `<mark>` + query +`</mark>`)}\",<br>`;
+        fetched_data += `&nbsp;&nbsp;&nbsp;&nbsp;\"${quote.replace(new RegExp(query, "ig"), `<mark>$&</mark>`)}\",<br>`;
       });
       code_output.innerHTML = `{<br>&nbsp;&nbsp;status: 200,<br>&nbsp;&nbsp;data: [<br>${fetched_data}&nbsp;&nbsp;]<br>}`;
     }
