@@ -1,13 +1,13 @@
 describe("Page Contain Title", () => {
   it("Correct Title", () => {
-    cy.visit("https://blv-anh-ngok-said.onrender.com/");
+    cy.visit("/");
     cy.contains("BLV ANH NGOK");
   });
 });
 
 describe("Landing Page Anchors", () => {
   it("Should Contain 8 Anchors", () => {
-    cy.visit("https://blv-anh-ngok-said.onrender.com/");
+    cy.visit("/");
     cy.get("a")
       .should("not.be.empty")
       .and(($a) => {
@@ -17,7 +17,7 @@ describe("Landing Page Anchors", () => {
   });
 
   it("Should Contain 5 API Anchors", () => {
-    cy.visit("http://localhost:5173");
+    cy.visit("/");
     cy.get(".api-link")
       .should("not.be.empty")
       .and(($a) => {
@@ -40,7 +40,32 @@ describe("Landing Page Anchors", () => {
 });
 
 describe("Code Boxes Should Not Be Empty", () => {
-  it("Should Not Be Empty", () => {
-    cy.get('code').should('not.be.empty');
-  })
+
+  it("Should Contain 5 Code Boxes", () => {
+    cy.visit("/");
+    cy.get("code")
+      .should("not.be.empty")
+      .and(($c) => {
+        // should have found 5 elements
+        expect($c).to.have.length(5);
+
+      });
+  });
+
+
+  it("Code Boxes Should Never Be Empty", () => {
+    cy.visit("/");
+    cy.get("code")
+      .should("not.be.empty")
+      .and(($c) => {
+        const boxes_content = $c.map(box => {
+          return Cypress.$(box).innerText;
+        });
+
+        boxes_content.get().forEach(box => {
+          expect(box).to.not.be.empty();
+        })
+
+      });
+  });
 })
