@@ -30,15 +30,18 @@ async function fetchWithQuery(query, elem) {
   let fetched_data = "";
   const code_output = document.getElementById(elem);
   fetch(`/api/quotes/search/${query}`)
-  .then((res) => res.json())
-  .then((arr) => {
-    if (arr.status === 200) {
-      arr.data.forEach((quote) => {
-        fetched_data += `&nbsp;&nbsp;&nbsp;&nbsp;\"${quote.replace(new RegExp(query, "ig"), `<mark>$&</mark>`)}\",<br>`;
-      });
-      code_output.innerHTML = `{<br>&nbsp;&nbsp;status: 200,<br>&nbsp;&nbsp;data: [<br>${fetched_data}&nbsp;&nbsp;]<br>}`;
-    }
-  });
+    .then((res) => res.json())
+    .then((arr) => {
+      if (arr.status === 200) {
+        arr.data.forEach((quote) => {
+          fetched_data += `&nbsp;&nbsp;&nbsp;&nbsp;\"${quote.replace(
+            new RegExp(query, "ig"),
+            `<mark>$&</mark>`
+          )}\",<br>`;
+        });
+        code_output.innerHTML = `{<br>&nbsp;&nbsp;status: 200,<br>&nbsp;&nbsp;data: [<br>${fetched_data}&nbsp;&nbsp;]<br>}`;
+      }
+    });
 }
 
 async function badFetchWithoutQuery(param, elem) {
@@ -50,14 +53,9 @@ async function badFetchWithoutQuery(param, elem) {
     });
 }
 
-window.addEventListener('load', () => {
-  fetchQuotes(2, "all-fetch-output");
-  fetchQuotes(3, "multiple-fetch-output");
-  fetchWithQuery("em", "search-output");
-  badFetchWithoutQuery("", "bad-search-output");
-  badFetch(15, "bad-fetch-output-limit");
-  badFetch("invalidparam", "bad-fetch-output-param");
-});
-
-
-
+fetchQuotes(2, "all-fetch-output");
+fetchQuotes(3, "multiple-fetch-output");
+fetchWithQuery("em", "search-output");
+badFetchWithoutQuery("", "bad-search-output");
+badFetch(15, "bad-fetch-output-limit");
+badFetch("invalidparam", "bad-fetch-output-param");
