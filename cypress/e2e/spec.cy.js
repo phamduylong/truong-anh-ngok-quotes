@@ -38,3 +38,9 @@ describe("Landing Page Anchors", () => {
       });
   });
 });
+
+describe("Code Boxes Should Not Be Empty", () => {
+  it("Should Not Be Empty", () => {
+    cy.get('code').should('not.be.empty');
+  })
+})
