@@ -1,7 +1,14 @@
 describe("Page Contain Title", () => {
   it("Correct Title", () => {
     cy.visit("/");
-    cy.contains("BLV ANH NGOK");
+    cy.title().should("be.deep.eq", "Anh Ngok's API");
+  });
+});
+
+describe("Page Contain Banner", () => {
+  it("Correct Banner", () => {
+    cy.visit("/");
+    cy.get("#banner").should("have.text", "BLV ANH NGOK'S API 🐰");
   });
 });
 
