@@ -35,7 +35,7 @@ npm run dev
 Get a random quote as below:
 > [https://blv-anh-ngok-said.onrender.com/api/quotes](https://blv-anh-ngok-said.onrender.com/api/quotes)
 
-```json
+```bash
 {
     status: 200,
     data: [
@@ -51,7 +51,7 @@ Get a random quote as below:
 Generate a number of random quotes (max. 10):
 > [https://blv-anh-ngok-said.onrender.com/api/quotes/1](https://blv-anh-ngok-said.onrender.com/api/quotes/1)
 
-```json
+```bash
 {
     status: 200,
     data: [
@@ -62,7 +62,7 @@ Generate a number of random quotes (max. 10):
 
 > [https://blv-anh-ngok-said.onrender.com/api/quotes/5](https://blv-anh-ngok-said.onrender.com/api/quotes/5)
 
-```json
+```bash
 {
     status: 200,
     data: [
@@ -78,7 +78,7 @@ Generate a number of random quotes (max. 10):
 Error response format:
 > [https://blv-anh-ngok-said.onrender.com/api/quotes/15](https://blv-anh-ngok-said.onrender.com/api/quotes/15)
 
-```json
+```bash
 {
     status: 400,
     error: "Fetch amount has to be larger than 0 and less than or equal to 10!"
@@ -90,7 +90,7 @@ Error response format:
 Get all quotes matching a search query:
 > [https://blv-anh-ngok-said.onrender.com/api/quotes/search/em](https://blv-anh-ngok-said.onrender.com/api/quotes/search/em)
 
-```json
+```bash
 {
     status: 200,
     data: [
