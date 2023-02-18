@@ -3,6 +3,7 @@
     "chai": "^4.3.7",
     "chai-http": "^4.3.0",
     "cypress": "^12.5.1",
+    "dotenv": "^16.0.3",
     "ejs": "^3.1.8",
     "mocha": "^10.2.0",
     "nodemon": "^2.0.20"
@@ -24,7 +25,7 @@
   "scripts": {
     "dev": "nodemon ./server.js",
     "build": "node ./server.js",
-    "test": "mocha & npx cypress run"
+    "test": "npx cypress run --headed --no-exit & mocha"
   },
   "repository": {
     "type": "git",
