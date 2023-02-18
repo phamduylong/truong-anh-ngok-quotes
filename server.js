@@ -13,7 +13,11 @@ const apiLimiter = rateLimit({
 	max: 10000, 
 	standardHeaders: true, 
 	legacyHeaders: false,
-})
+});
+
+if (process.env.NODE_ENV !== 'production') {
+	require('dotenv').config();
+}
 
 app.use('/api/', apiLimiter);
 app.use(helmet());
