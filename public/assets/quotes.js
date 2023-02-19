@@ -26,6 +26,11 @@ const quotes = [
   "Nicolo Zaniolo ơi, cháu tên là gì? Tên cháu là Nam, Đức hay là Tuấn?",
   "Bạn viết tâm thư lên Liên hợp quốc nhé. Chắc là họ lắng nghe bạn đấy.",
   "Chém gió tí cho vui mà em",
+  "Cappuccino pha bằng máy Ý và cafe nhập từ Ý mà em",
+  "Nhà anh, anh thích thì anh khoe, có quy định nào cấm khoe không em?",
+  "Nick ảo ơi, chào bạn. Người thông minh và tử tế, ai lại dùng nick nặc danh thế...",
+  "Tôi chụp bằng iPhone 8 PLus mới tinh đấy ông",
+  "Xin chào, có phải là anh đang tìm kiếm em không?"
 ];
 
 function fetchQuotes(amount = 1) {
