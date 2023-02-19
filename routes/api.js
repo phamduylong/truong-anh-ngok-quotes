@@ -2,7 +2,8 @@ const express = require("express");
 const router = express.Router();
 const { fetchQuotes, fetchAllQuotes, searchQuotes } = require("../public/assets/quotes");
 const FETCH_LIMIT = 10;
-//main route
+
+// GET ALL QUOTES
 router.get("/quotes", async (req, res) => {
   const all_quotes = fetchAllQuotes();
   
@@ -14,7 +15,7 @@ router.get("/quotes", async (req, res) => {
   }
 });
 
-
+// GET AMOUNT (LIMIT OF 10)
 router.get("/quotes/:amount([0-9]+)", async (req, res) => {
   const requested_amount = Number(req.params.amount);
   if (isNaN(requested_amount)) {
@@ -28,6 +29,7 @@ router.get("/quotes/:amount([0-9]+)", async (req, res) => {
   }
 });
 
+// SEARCH WITH QUERY
 router.get("/quotes/search/:query?", async (req, res) => {
   const query = req.params.query;
   if(query) {
@@ -36,5 +38,4 @@ router.get("/quotes/search/:query?", async (req, res) => {
   return res.status(400).json({status: 400, error: "Invalid search query!"});
 })
 
-//export router
 module.exports = router;

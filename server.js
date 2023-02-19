@@ -7,7 +7,7 @@ const rateLimit = require('express-rate-limit');
 const api = require('./routes/api');
 const app = express();
 
-
+// Configurations for api limiter pkg
 const apiLimiter = rateLimit({
 	windowMs: 24* 60 * 60 * 1000, // 1 day in ms
 	max: 10000, 
@@ -30,6 +30,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use('/api', api);
 app.use(express.json());
 
+// Set generic headers for all routes
 app.all('*', function (req, res, next) {
 	res.set({
 		"Connection": "Keep-Alive",
@@ -40,6 +41,7 @@ app.all('*', function (req, res, next) {
     next();
 });
 
+// Main route to render to landing page
 app.get('/', async (req, res) => {
 	res.setHeader("Content-Type", "text/html");
     res.render('home');
@@ -49,4 +51,5 @@ const PORT = process.env.PORT || 5173;
 
 app.listen(PORT, () => {  }); 
 
+// Export app for testing purposes
 module.exports = app;

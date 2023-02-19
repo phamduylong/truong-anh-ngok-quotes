@@ -1,3 +1,6 @@
+/*__________________________________________________________________HELPER FUNCTIONS TO RENDER PAGE__________________________________________________________________*/
+
+// Fetch quotes with given amount and output it to given element
 async function fetchQuotes(amount, elem) {
   let fetched_data = "";
   const code_output = document.getElementById(elem);
@@ -17,6 +20,7 @@ async function fetchQuotes(amount, elem) {
     });
 }
 
+// Fetch with invalid param
 async function badFetch(param, elem) {
   const code_output = document.getElementById(elem);
   fetch(`/api/quotes/${param}`)
@@ -26,6 +30,7 @@ async function badFetch(param, elem) {
     });
 }
 
+// Fetch quotes matching query
 async function fetchWithQuery(query, elem) {
   let fetched_data = "";
   const code_output = document.getElementById(elem);
@@ -44,6 +49,7 @@ async function fetchWithQuery(query, elem) {
     });
 }
 
+// Bad fetch with empty query
 async function badFetchWithoutQuery(param, elem) {
   const code_output = document.getElementById(elem);
   fetch(`/api/quotes/search/${param}`)
