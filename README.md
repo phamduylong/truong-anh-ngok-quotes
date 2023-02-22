@@ -4,8 +4,8 @@
 
 An API to generate quotes from Truong Anh Ngoc (Vietnamese Representative at France Football to participate in voting for the famous Ballon d'Or annually).
 
-[Project Frontpage (Asia)](https://blv-anh-ngok-said.onrender.com/)
-[Project Frontpage (EU)](https://anh-ngok-api-eu.onrender.com/)
+[API Frontpage (Singapore)](https://blv-anh-ngok-said.onrender.com/) 👈😃👉
+[API Frontpage (Frankfurt)](https://anh-ngok-api-eu.onrender.com/)
 
 ## Setup
 
