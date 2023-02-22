@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="An API to generate random quotes from Commentator Anh Ngok.">
+    <meta property="og:title" content="BLV Anh Ngok's API" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://blv-anh-ngok-said.onrender.com/" />
+    <meta name="twitter:card" content="summary"></meta>
+    <title>Anh Ngok's API</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="styles/styles.css" />
+    <script src="scripts/fetch_requests.js" async></script>
+  </head>
+  <body>
+    <!-- Main code blocks container -->
+    <div id="main-container">
+          <span class="method">GET</span>&nbsp;&nbsp;
+          <a class="api-link" href="/api/quotes" target="_blank">
+            https://blv-anh-ngok-said.onrender.com/api/quotes
+            </a
+          >
+        
+        <div class="code-section">
+          <pre><code id="all-fetch-output">
+          </code></pre>
+
+        </div>
+
+
+        <span class="method">GET</span>&nbsp;&nbsp;
+        <a class="api-link" href="/api/quotes/3" target="_blank">
+          https://blv-anh-ngok-said.onrender.com/api/quotes/3
+          </a
+        >
+        &nbsp;(Limit 10)
+        <div class="code-section">
+          <pre><code id="multiple-fetch-output" class="language-javascript">
+          </code></pre>
+        </div>
+
+        <span class="method">GET</span>&nbsp;&nbsp;
+        <a class="api-link" href="/api/quotes/15" target="_blank">
+          https://blv-anh-ngok-said.onrender.com/api/quotes/15
+          </a
+        >
+        &nbsp;(Limit exceeded)
+        <div class="code-section">
+          <pre><code id="bad-fetch-output-limit">
+          </code></pre>
+        </div>
+
+      <span class="method">GET</span>&nbsp;&nbsp;
+      <a class="api-link" href="/api/quotes/search/em" target="_blank">
+        https://blv-anh-ngok-said.onrender.com/api/quotes/search/em
+        </a
+      >
+      &nbsp;(Search for quotes with the keyword "em")
+      <div class="code-section">
+        <pre><code id="search-output">
+        </code></pre>
+      </div>
+
+      <span class="method">GET</span>&nbsp;&nbsp;
+      <a class="api-link" href="/api/quotes/search/" target="_blank">
+        https://blv-anh-ngok-said.onrender.com/api/quotes/search/
+        </a
+      >
+      &nbsp;(Empty search)
+      <div class="code-section">
+        <pre><code id="bad-search-output">
+        </code></pre>
+      </div>
+    </div>
+    </div>
+
+    <!-- Contact bar top right -->
+    <div id="contact-bar">
+      <a href="mailto:longphamduy2002@gmail.com" target="_blank"><img src="assets/email.svg" alt="Email"></a>
+      <a href="https://github.com/phamduylong/truong-anh-ngok-quotes" target="_blank"><img src="assets/github.svg" alt="GitHub"></a>
+      <a href="https://github.com/phamduylong/truong-anh-ngok-quotes/#readme" target="_blank"><img src="assets/docs.svg" alt="Documentations"></a>
+    </div>
+
+    <!-- Page banner -->
+    <div id="banner">BLV ANH NGOK'S API 🐰</div>
+
+    
+  </body>
+</html>
