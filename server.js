@@ -44,7 +44,7 @@ app.all('*', function (req, res, next) {
 // Main route to render to landing page
 app.get('/', async (req, res) => {
 	res.setHeader("Content-Type", "text/html");
-    res.render('home');
+    res.sendFile(path.join(__dirname, "public", "views", "home.html"));
 });
 
 const PORT = process.env.PORT || 5173;
