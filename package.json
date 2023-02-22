@@ -25,7 +25,7 @@
   "scripts": {
     "dev": "nodemon ./server.js",
     "build": "node ./server.js",
-    "test": "npx cypress run --headed & mocha"
+    "test": "npx cypress run & mocha"
   },
   "repository": {
     "type": "git",
