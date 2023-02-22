@@ -1,3 +1,7 @@
+# ‼️ Important
+
+The API is temporary down due to hosting issues ([render.com](https://render.com) having some issue with their server that hasn't been resolved).
+
 # BLV Anh Ngok's Quotes
 
 ## About
