@@ -1,14 +1,11 @@
-# ‼️ Important
-
-The API is temporary down due to hosting issues ([render.com](https://render.com) having some issue with their server that hasn't been resolved).
-
 # BLV Anh Ngok's Quotes
 
 ## About
 
 An API to generate quotes from Truong Anh Ngoc (Vietnamese Representative at France Football to participate in voting for the famous Ballon d'Or annually).
 
-[Project Frontpage](https://blv-anh-ngok-said.onrender.com/)
+[Project Frontpage (Asia)](https://blv-anh-ngok-said.onrender.com/)
+[Project Frontpage (EU)](https://anh-ngok-api-eu.onrender.com/)
 
 ## Setup
 
