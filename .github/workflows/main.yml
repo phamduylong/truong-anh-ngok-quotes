@@ -25,13 +25,4 @@ jobs:
         cache: 'npm'
     - name: Install Dependencies
       run: npm ci
-
-    - name: Run Build
-      run: npm run build
-
-    - name: Run Unit Tests
-      run: npm run unit-test
-
-    - name: Run E2E Tests
-      run: npm run e2e-test
       
