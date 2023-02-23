@@ -30,5 +30,13 @@ jobs:
       run: npm run unit-test
 
     - name: Start Server For Testing
-      run: npm start
+      run: npm start &
       
+    - name: Run Cypress Tests
+      run: |
+        npm run e2e-test
+
+    - name: Stop server
+      run: |
+        kill $(lsof -t -i:5173)
+        # This command finds the process ID of the server
