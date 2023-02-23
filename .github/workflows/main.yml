@@ -42,5 +42,4 @@ jobs:
       run: |
         kill $(lsof -t -i:$PORT) || true
   
-  deploy:
 
