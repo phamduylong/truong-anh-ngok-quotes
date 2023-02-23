@@ -25,7 +25,7 @@
   "scripts": {
     "dev": "nodemon ./server.js",
     "build": "node ./server.js",
-    "test": "npx cypress run --timeout 60000 & mocha"
+    "test": "npx cypress run & mocha"
   },
   "repository": {
     "type": "git",
