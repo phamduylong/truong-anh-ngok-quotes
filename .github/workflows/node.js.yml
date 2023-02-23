@@ -28,3 +28,7 @@ jobs:
     
     - name: Run test cases
       run: npm test
+      
+    - name: Terminate Cypress tests
+      if: always()
+      run: pkill -f "cypress" || true
