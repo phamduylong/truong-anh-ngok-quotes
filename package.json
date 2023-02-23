@@ -25,7 +25,7 @@
   "scripts": {
     "dev": "nodemon ./server.js",
     "build": "node ./server.js",
-    "unit-test": "mocha",
+    "unit-test": "mocha --exit",
     "e2e-test": "npx cypress run --headed"
   },
   "repository": {
