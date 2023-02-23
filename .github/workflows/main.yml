@@ -52,7 +52,7 @@ jobs:
         node-version: [14.x, 16.x, 18.x]
 
     steps:
-      - name: Trigger Deployment
+      - name: Trigger Deployment To Production Environment
         env:
           serviceId: ${{ env.WS_ID }}
         run: |
