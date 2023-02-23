@@ -43,3 +43,18 @@ jobs:
         kill $(lsof -t -i:$PORT) || true
   
 
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x, 18.x]
+
+    steps:
+      - name: Trigger Deployment
+        env:
+          serviceId: ${{ env.WS_ID }}
+        run: |
+          curl --request POST --url https://api.render.com/v1/services/$serviceId/deploys --header 'accept: application/json' --header 'content-type: application/json' --data '{ "clearCache": "do_not_clear" }'
+
