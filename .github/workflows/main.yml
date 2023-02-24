@@ -70,15 +70,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x, 18.x]
-
     steps:
       - name: Trigger Deployment To Production Environment
         env:
           serviceId: ${{ env.WS_ID }}
           TOKEN: ${{ env.BEARER_TOKEN}}
         run: |
-          curl --request POST --url https://api.render.com/v1/services/$serviceId/deploys --header 'accept: application/json' --header 'authorization: Bearer $TOKEN' --header 'content-type: application/json' --data '{ "clearCache": "do_not_clear" }'
+          curl --request POST --url https://api.render.com/v1/services/$serviceId/deploys --header 'accept: application/json' --header 'authorization: Bearer $TOKEN' --header 'content-type: application/json' --data '{ "clearCache": "do_not_clear" }' --include
 
