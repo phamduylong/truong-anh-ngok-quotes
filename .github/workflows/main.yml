@@ -83,7 +83,7 @@ jobs:
         run: |
           response=$(curl -v -X POST https://api.render.com/v1/services/${{ secrets.WEB_SERVICE_ID_SING }}/deploys --header 'accept: application/json' --header 'authorization: Bearer ${{ secrets.PRODUCTION_API_KEY }}' --header 'content-type: application/json' --data '{ "clearCache": "do_not_clear" }' --include)
 
-    deploy-europe:
+  deploy-europe:
     needs: [build, test]
     runs-on: ubuntu-latest
     timeout-minutes: 10
