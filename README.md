@@ -29,6 +29,16 @@ cd truong-anh-ngok-quotes
 npm run dev
 ```
 
+### Run tests
+- Unit Tests:
+```bash
+npm run unit-test
+```
+- End-to-end Tests:
+```bash
+npm run e2e-test
+```
+
 ## API Endpoints
 
 #### `GET /api/quotes`
