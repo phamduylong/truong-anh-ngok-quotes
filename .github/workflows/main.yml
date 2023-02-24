@@ -22,6 +22,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+
+    - name: Install Dependencies
+      run: npm ci
+
     - name: Build Project
       run: npm run build --if-present &
     
@@ -80,8 +84,5 @@ jobs:
       - name: Print environment variables
         run: printenv
       - name: Trigger Deployment To Production Environment
-        env:
-          serviceId: ${{ env.WS_ID }}
-          TOKEN: ${{ env.BEARER_TOKEN}}
         run: |
-          response=$(curl -v -X POST https://api.render.com/v1/services/${{ env.WS_ID}}/deploys --header 'accept: application/json' --header 'authorization: Bearer ${{ env.BEARER_TOKEN }}' --header 'content-type: application/json' --data '{ "clearCache": "do_not_clear" }' --include)
+          response=$(curl -v -X POST https://api.render.com/v1/services/${{ secrets.WEBSERVICE_ID}}/deploys --header 'accept: application/json' --header 'authorization: Bearer ${{ secrets.PRODUCTION_API_KEY }}' --header 'content-type: application/json' --data '{ "clearCache": "do_not_clear" }' --include)
