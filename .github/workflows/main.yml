@@ -76,5 +76,5 @@ jobs:
           serviceId: ${{ env.WS_ID }}
           TOKEN: ${{ env.BEARER_TOKEN}}
         run: |
-          curl --request POST --url https://api.render.com/v1/services/$serviceId/deploys --header 'accept: application/json' --header 'authorization: Bearer $TOKEN' --header 'content-type: application/json' --data '{ "clearCache": "do_not_clear" }' --include
-
+          response = $(curl --request POST --url https://api.render.com/v1/services/$serviceId/deploys --header 'accept: application/json' --header 'authorization: Bearer $TOKEN' --header 'content-type: application/json' --data '{ "clearCache": "do_not_clear" }' --include)
+          echo "response from curl= $response"  
