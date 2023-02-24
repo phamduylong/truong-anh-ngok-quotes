@@ -67,6 +67,7 @@ jobs:
         kill $(lsof -t -i:$PORT) || true
   
 
+
   deploy:
     needs: [build, test]
     runs-on: ubuntu-latest
@@ -75,10 +76,12 @@ jobs:
       name: Production
       url: https://blv-anh-ngok-said.onrender.com/
     steps:
+
+      - name: Print environment variables
+        run: printenv
       - name: Trigger Deployment To Production Environment
         env:
           serviceId: ${{ env.WS_ID }}
           TOKEN: ${{ env.BEARER_TOKEN}}
         run: |
-          response=$(curl -X POST https://api.render.com/v1/services/$serviceId/deploys --header 'accept: application/json' --header 'authorization: $TOKEN' --header 'content-type: application/json' --data '{ "clearCache": "do_not_clear" }' --include)
-          echo "response from curl=$response"  
+          response=$(curl -v -X POST https://api.render.com/v1/services/${{ env.WS_ID}}/deploys --header 'accept: application/json' --header 'authorization: Bearer ${{ env.BEARER_TOKEN }}' --header 'content-type: application/json' --data '{ "clearCache": "do_not_clear" }' --include)
