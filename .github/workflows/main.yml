@@ -69,7 +69,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 10
-
+    environment: 
+      name: Production
+      url: https://blv-anh-ngok-said.onrender.com/
     steps:
       - name: Trigger Deployment To Production Environment
         env:
