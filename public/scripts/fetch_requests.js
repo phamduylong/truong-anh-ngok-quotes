@@ -26,12 +26,12 @@ async function fetchQuotes(amount, elemID) {
             break;
 
           default:
-            code_output.innnerHTML = "";
+            code_output.innerHTML = "";
             break;
         }
       }
     }).catch(err => {
-      code_output.innnerHTML = `Error ${err} occured while fetching results. Try reloading the page.`;
+      code_output.innerHTML = `Error ${err} occured while fetching results. Try reloading the page.`;
     });
 }
 
@@ -47,7 +47,7 @@ async function badFetch(param, elemID) {
     })
 
     .catch(err => {
-      code_output.innnerHTML = `Error ${err} occured while fetching results. Try reloading the page.`;
+      code_output.innerHTML = `Error ${err} occured while fetching results. Try reloading the page.`;
     });
 }
 
@@ -74,7 +74,7 @@ async function fetchWithQuery(query, elemID) {
     })
 
     .catch(err => {
-      code_output.innnerHTML = `Error ${err} occured while fetching results. Try reloading the page.`;
+      code_output.innerHTML = `Error ${err} occured while fetching results. Try reloading the page.`;
     });
 }
 
@@ -90,7 +90,7 @@ async function badFetchWithoutQuery(param, elemID) {
     })
     
     .catch(err => {
-      code_output.innnerHTML = `Error ${err} occured while fetching results. Try reloading the page.`;
+      code_output.innerHTML = `Error ${err} occured while fetching results. Try reloading the page.`;
     });
 }
 
