@@ -9,7 +9,10 @@ on:
 jobs:
   build: 
     runs-on: ubuntu-latest
+
     timeout-minutes: 5
+
+    if: ${{ github.actor != 'dependabot[bot]' }}
 
     strategy:
       matrix:
@@ -37,8 +40,12 @@ jobs:
 
   test:
     needs: [build]
+
     runs-on: ubuntu-latest
+
     timeout-minutes: 10
+
+    if: ${{ github.actor != 'dependabot[bot]' }}
 
     strategy:
       matrix:
@@ -73,11 +80,17 @@ jobs:
 
   deploy-sing:
     needs: [build, test]
+
     runs-on: ubuntu-latest
+
     timeout-minutes: 10
+
+    if: ${{ github.actor != 'dependabot[bot]' }}
+
     environment: 
       name: ProductionSing
       url: https://blv-anh-ngok-said.onrender.com/
+
     steps:
       - name: Trigger Deployment To Singapore Server
         run: |
@@ -85,11 +98,17 @@ jobs:
 
   deploy-europe:
     needs: [build, test]
+
     runs-on: ubuntu-latest
+
     timeout-minutes: 10
+
+    if: ${{ github.actor != 'dependabot[bot]' }}
+
     environment: 
       name: ProductionEU
       url: https://anh-ngok-api-eu.onrender.com/
+      
     steps:
       - name: Trigger Deployment To Frankfurt Server
         run: |
