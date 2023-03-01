@@ -2,17 +2,18 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: 
+      - main
+      - !dependabot/* # Exclude branches created by dependabot
   pull_request:
-    branches: [ "main" ]
+    branches: 
+      - main
 
 jobs:
   build: 
     runs-on: ubuntu-latest
 
     timeout-minutes: 5
-
-    if: ${{ github.actor != 'dependabot[bot]' }}
 
     strategy:
       matrix:
@@ -44,8 +45,6 @@ jobs:
     runs-on: ubuntu-latest
 
     timeout-minutes: 10
-
-    if: ${{ github.actor != 'dependabot[bot]' }}
 
     strategy:
       matrix:
@@ -85,8 +84,6 @@ jobs:
 
     timeout-minutes: 10
 
-    if: ${{ github.actor != 'dependabot[bot]' }}
-
     environment: 
       name: ProductionSing
       url: https://blv-anh-ngok-said.onrender.com/
@@ -102,8 +99,6 @@ jobs:
     runs-on: ubuntu-latest
 
     timeout-minutes: 10
-
-    if: ${{ github.actor != 'dependabot[bot]' }}
 
     environment: 
       name: ProductionEU
