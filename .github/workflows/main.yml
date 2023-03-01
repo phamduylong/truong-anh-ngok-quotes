@@ -2,10 +2,11 @@ name: Node.js CI
 
 on:
   push:
-    branches: 
-      - main
+  push:
     branches-ignore:
-      - 'dependabot/**' # Exclude branches created by Dependabot
+      - 'dependabot/**'
+    branches:
+      - main
   pull_request:
     branches: 
       - main
