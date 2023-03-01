@@ -4,7 +4,8 @@ on:
   push:
     branches: 
       - main
-      - !dependabot/* # Exclude branches created by dependabot
+    branches-ignore:
+      - 'dependabot/**' # Exclude branches created by Dependabot
   pull_request:
     branches: 
       - main
