@@ -1,7 +1,7 @@
 const chai = require("chai");
 const chaihttp = require("chai-http");
 const app = require("../server");
-const { quotes, searchQuotes } = require("../public/assets/quotes");
+const { quotes, searchQuotes } = require("../public/assets/quotes.ts");
 const should = chai.should();
 chai.use(chaihttp);
 
