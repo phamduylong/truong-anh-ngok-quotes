@@ -4,6 +4,7 @@ const helmet = require("helmet");
 const compression = require('compression');
 const cors = require('cors');
 const rateLimit = require('express-rate-limit');
+const log = require('loglevel');
 const api = require('./routes/api');
 const app = express();
 
@@ -49,7 +50,7 @@ app.get('/', async (req, res) => {
 
 const PORT = process.env.PORT || 5173;
 
-app.listen(PORT, () => {  }); 
+app.listen(PORT, () => { log.debug(`Server running on port ${PORT}`) }); 
 
 // Export app for testing purposes
 module.exports = app;
