@@ -106,3 +106,4 @@ dist
 # Testing documents
 cypress/videos
 cypress/screenshots
+/.vs
