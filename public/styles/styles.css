@@ -79,7 +79,7 @@ pre {
   text-align: left;
 }
 
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 960px) and (orientation: landscape) {
   #main-container {
     position: absolute;
     top: 60%;
