@@ -10,7 +10,7 @@ describe("Page Contain Title", () => {
 
 describe("Page Contain Banner", () => {
   it("Correct Banner", () => {
-    cy.get("#banner").should("have.text", "BLV ANH NGOK'S API 🐰");
+    cy.get("#banner").should("have.text", "BLV ANH NGOK\'S API 🐰");
   });
 });
 
