@@ -4,7 +4,7 @@ const {
   fetchQuotes,
   fetchAllQuotes,
   searchQuotes,
-} = require("../public/assets/quotes.ts");
+} = require("../public/assets/quotes.js");
 const should = chai.should();
 
 describe("Fetch Quotes Function Test", () => {

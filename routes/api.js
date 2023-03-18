@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { fetchQuotes, fetchAllQuotes, searchQuotes } = require("../public/assets/quotes.ts");
+const { fetchQuotes, fetchAllQuotes, searchQuotes } = require("../public/assets/quotes.js");
 const FETCH_LIMIT = 10;
 
 // GET ALL QUOTES
