@@ -107,3 +107,4 @@ dist
 test/cypress/videos
 test/cypress/screenshots
 /.vs
+/.idea
