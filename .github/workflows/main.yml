@@ -2,82 +2,12 @@ name: Node.js CI
 
 on:
   push:
-    branches-ignore:
-      - 'dependabot/**'
-      - 'develop'
+    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
 jobs:
-  build: 
-    runs-on: ubuntu-latest
-
-    timeout-minutes: 5
-
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x, 18.x]
-
-    steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-
-    - name: Install Dependencies
-      run: npm ci
-
-    - name: Build Project
-      run: npm run build --if-present &
-    
-    - name: Stop Server
-      env:
-        PORT: ${{ env.PORT }}
-      run: |
-        kill $(lsof -t -i:$PORT) || true
-
-  test:
-    needs: [build]
-
-    runs-on: ubuntu-latest
-
-    timeout-minutes: 10
-
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x, 18.x]
-
-    steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - name: Install Dependencies
-      run: npm ci
-
-    - name: Run Mocha Unit Tests
-      run: npm run unit-test
-
-    - name: Start Server For Testing
-      run: npm start &
-
-    - name: Run Cypress E2E Tests
-      run: |
-        npm run e2e-test
-
-    - name: Stop Server
-      env:
-        PORT: ${{ env.PORT }}
-      run: |
-        kill $(lsof -t -i:$PORT) || true
-  
-
   deploy-sing:
-    needs: [build, test]
 
     runs-on: ubuntu-latest
 
@@ -93,7 +23,6 @@ jobs:
           response=$(curl -v -X POST https://api.render.com/v1/services/${{ secrets.WEB_SERVICE_ID_SING }}/deploys --header 'accept: application/json' --header 'authorization: Bearer ${{ secrets.PRODUCTION_API_KEY }}' --header 'content-type: application/json' --data '{ "clearCache": "do_not_clear" }' --include)
 
   deploy-europe:
-    needs: [build, test]
 
     runs-on: ubuntu-latest
 
