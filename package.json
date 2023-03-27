@@ -5,7 +5,7 @@
     "cypress": "^12.8.1",
     "dotenv": "^16.0.3",
     "mocha": "^10.2.0",
-    "nodemon": "^2.0.21",
+    "nodemon": "^2.0.22",
     "signale": "^1.4.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.2"
