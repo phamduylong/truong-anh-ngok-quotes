@@ -20,7 +20,11 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 app.use('/api/', apiLimiter);
-app.use(helmet());
+app.use(helmet.contentSecurityPolicy({
+    directives: {
+      frameAncestors: ["'self' https://longph.com"],
+    },
+  }));
 app.use(compression());
 app.use(cors());
 app.set('view engine', 'ejs');
