@@ -14,7 +14,7 @@
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "express-rate-limit": "^6.7.0",
-    "helmet": "^6.1.2"
+    "helmet": "^6.1.5"
   },
   "name": "truong-anh-ngok-quotes",
   "description": "An API to generate quotes from Commentator/Journalist Truong Anh Ngoc (The only Vietnamese representatives to vote for the Ballon d'Or)",
